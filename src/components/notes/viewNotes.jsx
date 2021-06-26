@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { getFirst50words,toTitleCase } from "../../utils/utils";
 import userIcon from "../../assets/images/user-icon.png";
 
-const ViewNote =({notes,url,edit})=>{
+const ViewNote =({notes,url,edit,handleEdit})=>{
     return(
         <div>
           {!notes.length && (
@@ -23,33 +23,37 @@ const ViewNote =({notes,url,edit})=>{
                     alt="Note owner"
                   />
                   <div className="media-body">
-                    {note.hasOwnProperty("useremail") && (
-                      <h6 class="mt-0 font-weight-bold">
-                      <em>{new Date(note.createdAt).toLocaleString()}</em>
-                    </h6>
-                    )}
-                    <small className="mt-0">
-                      {new Date(note.createdAt).toLocaleString()}
-                    </small>
-                  </div>
-                </div>
-                <Link
-                  className="btn btn-info btn-lg my-4"
-                  to={`${url}/${note._id}`}
-                  role="button"
-                >
-                  See more
-                </Link> &nbsp;
-                {edit && (
-                    <span
-                    className="btn btn-info btn-lg my-4"
-                    role="button"
-                  >
-                    Edit
-                  </span>
+                {note.hasOwnProperty("useremail") && (
+                  <h6 className="mt-0 font-weight-bold">
+                    <em>{note.hasOwnProperty("useremail")?note.useremail:""}</em>
+                  </h6>
                 )}
-                <hr className="my-4" />
+                <small className="mt-0">
+                  {new Date(note.createdAt).toLocaleString()}
+                </small>
               </div>
+            </div>
+            <Link
+              className="btn btn-info btn-lg my-4"
+              to={`${url}/${note._id}`}
+              role="button"
+            >
+              See more
+            </Link>{" "}
+            &nbsp;
+            {edit && (
+              <span
+                className="btn btn-info btn-lg my-4"
+                role="button"
+                onClick={() => {
+                  if (edit) handleEdit(note);
+                }}
+              >
+                Edit
+              </span>
+            )}
+            <hr className="my-4" />
+          </div>
             );
           })}
         </div>
