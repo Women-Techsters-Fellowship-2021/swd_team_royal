@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #325d79;
+    font-family: 'Playfair Display', serif;
+    margin: 0 auto;
+}
+
+#preloader{
+    margin: 2em;
+    color: #f9a26c;
+    font-size: 2em;
+}
+
+.add-note{
+    color: white;
+    text-decoration: underline;
+}
+
+.add-note-container {
+    max-width: 100%;
+    min-width: 90%;
+}
+
+#note-title{
+    color: #efeeee;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.8em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.add-note-fields {
+    border-radius: 10px;
+    outline: none;
+    padding-left: 5px;
+}
+.add-note-fields:hover{
+    border: 2px solid #f9a26c;
+    border-radius: 10px;
+    background-color: #9bd7d1;
+}
+
+.container{
+    max-width: 500px;
+    min-width: 500px;
+    
+}
+
+.note{
+    background-color: #98d7d1;
+    color: rgb(41, 37, 37);
+    box-shadow: 10px 7px 10px white;
+    /* display: flex;
+    flex-direction: column; */
+    
+}
+
+.note-title{
+    border-bottom: 3px solid #f9a26c;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.welcome{
+    color: white;
+}
+
+/* .media-body{
+    background-color: red;
+} */
+
+/* Go back to note.js to style */
+.add-note-btn{
+    margin-bottom: 50px;
+    margin-top: 20px;
+    position: relative;
+    left: 40%;
+}
+
+.back-btn{
+    position: relative;
+    left: 40%;
+}
+
+.btn {
+    background-color: #f9a26c;
+    transition: all 0.5s;
+    font-size: 1.4em;
+    color: #efeeee;
+}
+
+.btn:hover{
+    background-color: #98d7d1;
+    border: 3px solid #f9a26c;
+    box-shadow: 3px 5px 5px white;
+    color: black;
+    
+}

@@ -12,7 +12,7 @@ const UserNote = () => {
   } = useContextGetter();
 
   const userNotes = notes
-    ? notes.filter((item) => item.userid === userData.id)
+    ? notes && notes.filter((item) => item.userid === userData.id)
     : [];
   console.log(userNotes);
 
@@ -30,7 +30,7 @@ const UserNote = () => {
       useremail: userData.email,
     };
 
-    fetch(`https://staging-express-api.herokuapp.com/notes`, {
+    fetch(`http://localhost:8001/posts`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -57,7 +57,7 @@ const UserNote = () => {
   return (
     <main>
       <div>
-          <Link className="btn btn-info btn-lg my-4" to="/notes" role="button">
+          <Link className="btn btn-lg my-4" to="/notes" role="button">
            view Notes
           </Link>
         </div>

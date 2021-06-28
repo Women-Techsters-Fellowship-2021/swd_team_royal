@@ -1,0 +1,39 @@
+{
+"data": [
+{
+    "_id": "60d46c7e0e14e2001c5116b8",
+    "topic": "HTML",
+    "title": "Introduction to HTML",
+    "note": "In week two, day 1 of the SWD class, CSS box model was discussed by the facilitator Choongsaeng Nwoka. The an understanding of the css box model helps the website designer understand how to use border, margin and padding. In the week two, day 2 of the SWD class, CSS box model was discussed by the facilitator Choongsaeng Nwoka. The an understanding of the CSS box model helps the website designer understand how to use border, margin and padding.",
+    "userid": "60cdca643e891200091665bc",
+    "createdAt": "2021-06-24T11:29:02.439Z",
+    "updatedAt": "2021-06-26T13:55:16.308Z",
+    "__v": 0,
+    "useremail": "anyebe@gmail.com"
+},
+{
+    "_id": "60d46dc20e14e2001c5116ba",
+    "topic": "CSS",
+    "title": "Introduction to HTML and CSS",
+    "note": "In week two, day 1 of the SWD class, CSS box model was discussed by the facilitator Choongsaeng Nwoka. The an understanding of the css box model helps the website designer understand how to use border, margin and padding. In the week two, day 2 of the SWD class, CSS box model was discussed by the facilitator Choongsaeng Nwoka. The an understanding of the css box model helps the website designer understand how to use border, margin and padding.",
+    "userid": "60cdca643e891200091665bc",
+    "createdAt": "2021-06-24T11:34:26.632Z",
+    "updatedAt": "2021-06-26T09:49:06.112Z",
+    "__v": 0,
+    "useremail": "anyebe@gmail.com"
+},
+{
+    "_id": "60d46df40e14e2001c5116bb",
+    "topic": "JavaScript",
+    "title": "Introduction to ReactJS",
+    "note": "In week two, day 1 of the SWD class, CSS box model was discussed by the facilitator Choongsaeng Nwoka. The an understanding of the css box model helps the website designer understand how to use border, margin and padding. In the week two, day 2 of the SWD class, CSS box model was discussed by the facilitator Choongsaeng Nwoka. The an understanding of the CSS box model helps the website designer understand how to use border, margin and padding.",
+    "userid": "60cdca643e891200091665bc",
+    "createdAt": "2021-06-24T11:35:16.094Z",
+    "updatedAt": "2021-06-26T09:39:00.387Z",
+    "__v": 0,
+    "useremail": "anyebe@gmail.com"
+}
+
+    ]
+
+}

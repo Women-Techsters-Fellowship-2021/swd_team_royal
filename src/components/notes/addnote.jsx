@@ -13,6 +13,7 @@ const AddNote = ({ addNote, alertMessage }) => {
     formState: { errors },
   } = useForm();
 
+
   const [selectedOption, setSelectedOption] = useState(null);
 
   // handle onChange event of the dropdown
@@ -22,19 +23,23 @@ const AddNote = ({ addNote, alertMessage }) => {
     setSelectedOption(e);
   };
   const isNUmberOfWordsValid = () => {
-    if (countWords(getValues("note")) < 50) return false;
+    if (countWords(getValues("note")) < 20) return false;
     return true;
   };
 
   const submit=({note,title})=>{
       if(selectedOption){
-        addNote({topic:selectedOption.value,note:note,title:title});
+        addNote({
+          topic:selectedOption.value,
+          note:note,
+          title:title
+        });
         return true
       }
   }
   return (
     <div className="add-note-container">
-      <h4 id="note-title">Want to share what you learn't? Add it!</h4>
+      <h4 id="note-title">Would you like to share what you learnt? Add it!</h4>
       {alertMessage.message ? (
         <Alert variant={alertMessage.variant}>{alertMessage.message}</Alert>
       ) : (
@@ -45,7 +50,7 @@ const AddNote = ({ addNote, alertMessage }) => {
           className="add-note-fields"
           name="topic"
           id="topic"
-          placeholder="Select topic"
+          placeholder="I want to talk about..."
           value={selectedOption}
           options={topics}
           onChange={handleSelectChange}
@@ -63,7 +68,7 @@ const AddNote = ({ addNote, alertMessage }) => {
               })}
         />
         <p className="text-danger">
-          {errors.title && <small>Title must be 4 characters above</small>}
+          {errors.title && <small>Title must be 4 characters and above</small>}
         </p>
         <textarea
           id="note"
@@ -77,9 +82,9 @@ const AddNote = ({ addNote, alertMessage }) => {
         ></textarea>
 
         <p className="text-danger">
-          {errors.note && <small>Your note must be more than 50 words</small>}
+          {errors.note && <small>Your note cannot be less than 20 words</small>}
         </p>
-        <button id="add-note-btn" type="submit">
+        <button className=" btn add-note-btn" type="submit">
           Post Note
         </button>
       </form>
