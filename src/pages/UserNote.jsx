@@ -30,8 +30,8 @@ const UserNote = () => {
       useremail: userData.email,
     };
 
-    fetch(`http://localhost:8001/posts`, {
-      method: "POST",
+   fetch(`https://staging-express-api.herokuapp.com/notes`, {
+      method: "PUT",
       headers: {
         "Content-type": "application/json",
       },

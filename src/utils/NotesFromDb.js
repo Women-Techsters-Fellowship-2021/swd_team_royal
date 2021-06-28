@@ -1,5 +1,5 @@
 export default function NotesFromDb() {
-  return fetch(`http://localhost:8001/posts`, {
+  return fetch(`https://staging-express-api.herokuapp.com/notes`, {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -14,7 +14,7 @@ export default function NotesFromDb() {
 }
 
 export function getSingelNote(id) {
-  return fetch(`http://localhost:8001/posts${id}`, {
+  return fetch(`https://staging-express-api.herokuapp.com/notes/${id}`, {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -29,7 +29,7 @@ export function getSingelNote(id) {
 }
 
 export function getUserNote(id) {
-  return fetch(`http://localhost:8001/posts${id}`, {
+  return fetch(`https://staging-express-api.herokuapp.com/notes/user/${id}`, {
     method: "GET",
     headers: {
       "Content-type": "application/json",
