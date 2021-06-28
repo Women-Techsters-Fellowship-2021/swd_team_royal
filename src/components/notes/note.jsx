@@ -6,6 +6,7 @@ import userIcon from "../../assets/images/user-icon.png";
 import { getSingelNote } from "../../utils/NotesFromDb";
 import Spinner from "../spinner";
 
+
 const Note = () => {
   let {noteId} = useParams();
   const [classNote, setClassNote] = useState(null);
@@ -24,27 +25,29 @@ const Note = () => {
       {!classNote && (
         <Spinner />
       )}
-      {classNote && (
+      {classNote && ( 
+      <>
         <div className="jumbotron note" key={classNote._id}>
           <h1 className="mt-5 note-title">{`${toTitleCase(
             classNote.title
           )}`}</h1>
-          <p className="lead">{`${getFirst50words(classNote.note)} ...`}</p>
-          <hr className="my-4" />
+          {/* <p className="lead">{`${getFirst50words(classNote.note)} ...`}</p> */}
+          {/* <hr className="my-4" /> */}
           <p>{classNote.note}</p>
           <div className="media">
             <img className="mr-3 note-avatar" src={userIcon} alt="Note owner" />
             <div className="media-body py-2">
               {classNote.hasOwnProperty("useremail") && (
-                <h6 class="mt-0 font-weight-bold">
+                <h6 className="mt-0 font-weight-bold">
                   <em>{new Date(classNote.createdAt).toLocaleString()}</em>
                 </h6>
               )}
-              <small>{new Date(classNote.createdAt).toLocaleString()}</small>
+              {/* <small>{new Date(classNote.createdAt).toLocaleString()}</small> */}
             </div>
           </div>
-          <button className="btn btn-sm btn-info my-4 px-3" onClick={()=>{history.goBack()}}>Back</button>
         </div>
+          <button className="btn back-btn btn-lg my-4 px-3" onClick={()=>{history.goBack()}}>Back</button>
+        </>
       )}
     </div>
   );

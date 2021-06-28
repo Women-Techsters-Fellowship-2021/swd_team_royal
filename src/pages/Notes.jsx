@@ -30,7 +30,7 @@ function Notes() {
         </Route>
         <Route path={match.path}>
           <div className="container mt-5 py-2">
-            <h2 className="font-weight-bold">Welcome {userData.email}</h2>
+            <h2 className="welcome font-weight-bold">Welcome {userData.email}</h2>
           </div>
           <div className="my-2">
 

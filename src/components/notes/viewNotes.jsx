@@ -5,13 +5,13 @@ import userIcon from "../../assets/images/user-icon.png";
 const ViewNote =({notes,url,edit,handleEdit})=>{
     return(
         <div>
-          {!notes.length && (
+          {notes && !notes.length && (
             <p className="text-info lead">
-              Notes will be available soon!!! You can also help by adding a
-              lesson you learnt <Link to="/add/note">here</Link>
+              Notes will be available soon!!! You can also add
+              lessons you have learnt <Link to="/add/note" className="add-note">here.</Link>
             </p>
           )}
-          {notes.map((note) => {
+          {notes && notes.map((note) => {
             return (
               <div className="container note my-3 py-3 px-4" key={note._id}>
                 <h2>{`${toTitleCase(note.title)}`}</h2>
@@ -23,10 +23,37 @@ const ViewNote =({notes,url,edit,handleEdit})=>{
                     alt="Note owner"
                   />
                   <div className="media-body">
+
+                    {/* {note.hasOwnProperty("useremail") && (
+                      <h6 class="mt-0 font-weight-bold">
+                      <em>{new Date(note.createdAt).toLocaleString()}</em>
+                    </h6>
+                    )} */}
+                    <h6 className="mt-0">
+                      {new Date(note.createdAt).toLocaleString()}
+                    </h6>
+                  </div>
+                </div>
+                <Link
+                  className="btn btn-lg my-4"
+                  to={`${url}/${note._id}`}
+                  role="button"
+                >
+                  See more
+                </Link> &nbsp;
+                {edit && (
+                    <span
+                    className="btn btn-lg my-4"
+                    role="button"
+                  >
+                    Edit Note
+                  </span>
+
                 {note.hasOwnProperty("useremail") && (
                   <h6 className="mt-0 font-weight-bold">
                     <em>{note.hasOwnProperty("useremail")?note.useremail:""}</em>
                   </h6>
+
                 )}
                 <small className="mt-0">
                   {new Date(note.createdAt).toLocaleString()}

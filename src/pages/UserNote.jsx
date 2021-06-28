@@ -9,7 +9,15 @@ const UserNote = () => {
     dispatch,
     state: { userData, notes },
   } = useContextGetter();
+
+
+  const userNotes = notes
+    ? notes && notes.filter((item) => item.userid === userData.id)
+    : [];
+  console.log(userNotes);
+
   const userNotes = notes.filter((item) => item.userid === userData.id);
+
 
   const [alertMessage, setAlertMessage] = useState({
     message: "",
@@ -73,8 +81,8 @@ const UserNote = () => {
       useremail: userData.email,
     };
 
-    fetch(`https://staging-express-api.herokuapp.com/notes`, {
-      method: "POST",
+   fetch(`https://staging-express-api.herokuapp.com/notes`, {
+      method: "PUT",
       headers: {
         "Content-type": "application/json",
       },
@@ -99,7 +107,7 @@ const UserNote = () => {
   return (
     <main>
       <div>
-          <Link className="btn btn-info btn-lg my-4" to="/notes" role="button">
+          <Link className="btn btn-lg my-4" to="/notes" role="button">
            view Notes
           </Link>
         </div>

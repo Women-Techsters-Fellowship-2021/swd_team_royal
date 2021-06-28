@@ -10,6 +10,7 @@ function reducer(state, action) {
 
   // set the name on our state copy to action
   stateCopy.action = action;
+  console.log(action)
 
   if (action.type === "NEW_NOTE") {
     stateCopy.notes.unshift(action.payload);
