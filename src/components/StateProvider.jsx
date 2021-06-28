@@ -17,6 +17,17 @@ function reducer(state, action) {
   
   }
 
+  if (action.type === "EDIT_NOTE") {
+    stateCopy.notes = stateCopy.notes.map(
+      note => {
+        if (note._id === action.payload._id) {
+          note=action.payload
+        }
+        return note;
+      }
+    );
+  }
+
   if (action.type === "SET_NOTE") {
     stateCopy.notes=action.payload;
   }

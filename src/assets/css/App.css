@@ -136,7 +136,7 @@ Add Note styles
   font-size: inherit;
 }
 
-#add-note-btn {
+.add-note-btn {
   margin: 2.5px 0px;
   padding: 0.65rem 1.1rem;
   font-size: inherit;
