@@ -4,6 +4,7 @@ import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { countWords } from "../../utils/utils";
 import { Alert } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const AddNote = ({ addNote, alertMessage }) => {
   const {
@@ -84,9 +85,14 @@ const AddNote = ({ addNote, alertMessage }) => {
         <p className="text-danger">
           {errors.note && <small>Your note cannot be less than 20 words</small>}
         </p>
-        <button className=" btn add-note-btn" type="submit">
+         <div className="mt-4">
+        <button className=" btn btn-lg add-note-btn" type="submit">
           Post Note
         </button>
+          <Link className="btn btn-lg add-note-btn" to="/notes" role="button">
+           view Notes
+          </Link>
+        </div>
       </form>
     </div>
   );

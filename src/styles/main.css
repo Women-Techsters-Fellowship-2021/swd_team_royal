@@ -52,10 +52,7 @@ body{
 .note{
     background-color: #98d7d1;
     color: rgb(41, 37, 37);
-    box-shadow: 10px 7px 10px white;
-    /* display: flex;
-    flex-direction: column; */
-    
+    box-shadow: 10px 7px 10px white;    
 }
 
 .note-title{
@@ -68,16 +65,12 @@ body{
     color: white;
 }
 
-/* .media-body{
-    background-color: red;
-} */
-
-/* Go back to note.js to style */
 .add-note-btn{
-    margin-bottom: 50px;
-    margin-top: 20px;
-    position: relative;
-    left: 40%;
+    margin: 10px 30px 10px 0px;
+}
+
+.add-note-btn:nth-child(1) {
+    margin-left: 250px;
 }
 
 .back-btn{
@@ -99,3 +92,4 @@ body{
     color: black;
     
 }
+
