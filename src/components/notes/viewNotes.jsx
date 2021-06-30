@@ -13,6 +13,7 @@ const ViewNote =({notes,url,edit})=>{
           )}
           {notes && notes.map((note) => {
             return (
+                <div className='d-flex p-2'>
               <div className="container note my-3 py-3 px-4" key={note._id}>
                 <h2>{`${toTitleCase(note.title)}`}</h2>
                 <p className="lead">{`${getFirst50words(note.note, 30)}...`}</p>
@@ -49,6 +50,7 @@ const ViewNote =({notes,url,edit})=>{
                   </span>
                 )}
                 <hr className="my-4" />
+                </div>
               </div>
             );
           })}

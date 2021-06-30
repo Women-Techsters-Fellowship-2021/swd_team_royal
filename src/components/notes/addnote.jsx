@@ -90,7 +90,7 @@ const AddNote = ({ addNote, alertMessage }) => {
           Post Note
         </button>
           <Link className="btn btn-lg add-note-btn" to="/notes" role="button">
-           view Notes
+           View Notes
           </Link>
         </div>
       </form>
